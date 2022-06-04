@@ -1,3 +1,5 @@
+let myLibrary = [];
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -8,5 +10,12 @@ function Book(title, author, pages, read) {
   };
 }
 
-const Hobbit = new Book("The Hobbit", "Tolkien", "300", "read");
-Hobbit.info();
+function addBookToLibrary(book) {
+  myLibrary += book;
+}
+
+const Hobbit = new Book("Hobbit", "Tolkien", "356", "yes");
+
+function Show(array) {
+  for (let i = 0; i <= 0; i++) {}
+}
