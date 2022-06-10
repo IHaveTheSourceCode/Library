@@ -10,12 +10,11 @@ function Book(title, author, pages, read) {
   };
 }
 
-function addBookToLibrary(book) {
-  myLibrary += book;
+function Test(book_title) {
+  this.book_title = book_title;
 }
 
-const Hobbit = new Book("Hobbit", "Tolkien", "356", "yes");
-
-function Show(array) {
-  for (let i = 0; i <= 0; i++) {}
+function addBookToLibrary() {
+  let book_title = prompt("book name: ");
+  myLibrary[0] = new Test(book_title);
 }
