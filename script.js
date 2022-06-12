@@ -1,7 +1,16 @@
 let myLibrary = [];
 const addBookBtn = document.querySelector(".addBookButton");
 
-addBookBtn.addEventListener("click", fnc);
+addBookBtn.addEventListener("click", popUpForm);
+
+// function that pops up form, after button is clicked
+function popUpForm() {
+  document.querySelector("form").style.display = "";
+}
+
+// function that closes form, when anything outside of
+// it is clicked
+function closeForm() {}
 
 function Book(title, author, pages, read) {
   this.title = title;

@@ -30,7 +30,8 @@ header {
 
 .content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 2rem;
 }
 
@@ -44,8 +45,48 @@ footer {
 }
 
 .github-link {
-  text-decoration: none;
   font-size: 1.2rem;
   font-family: "Roboto", sans-serif;
   color: white;
+  text-decoration-thickness: 4px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.3s;
+}
+
+.github-link:hover {
+  text-decoration-color: white;
+}
+
+.addBookButton {
+  height: 50px;
+  width: 50px;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--violet);
+  color: white;
+  border-color: transparent;
+}
+
+.addBookButton:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
+  display: none;
+}
+
+form > input {
+  margin-bottom: 10px;
+}
+
+form > div > input {
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-bottom: 20px;
 }
