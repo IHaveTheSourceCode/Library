@@ -1,14 +1,20 @@
 let myLibrary = [];
 const addBookBtn = document.querySelector(".addBookButton");
+const form = document.querySelector("form");
 
 addBookBtn.addEventListener("click", popUpForm);
 
 // function that pops up form, after button is clicked
+let btnActive = true;
 function popUpForm() {
-  if (document.querySelector("form").style.display == "none") {
-    document.querySelector("form").style.display = "flex";
+  if (btnActive === true) {
+    form.style.transform = "scale(1.2)";
+    form.style.visibility = "visible";
+    btnActive = false;
   } else {
-    document.querySelector("form").style.display = "none";
+    form.style.visibility = "hidden";
+    form.style.transform = "scale(0.1)";
+    btnActive = true;
   }
 }
 
