@@ -5,7 +5,11 @@ addBookBtn.addEventListener("click", popUpForm);
 
 // function that pops up form, after button is clicked
 function popUpForm() {
-  document.querySelector("form").style.display = "";
+  if (document.querySelector("form").style.display == "none") {
+    document.querySelector("form").style.display = "flex";
+  } else {
+    document.querySelector("form").style.display = "none";
+  }
 }
 
 // function that closes form, when anything outside of
