@@ -101,3 +101,4 @@ body:hover {
   background-color: black;
   opacity: 0.05;
 }
+/* add div to cover viewport instead of body */
