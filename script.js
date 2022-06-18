@@ -32,8 +32,4 @@ function Book(title, author, pages, read) {
   };
 }
 
-function Test(book_title) {
-  this.book_title = book_title;
-}
-
 function addBookToLibrary() {}
