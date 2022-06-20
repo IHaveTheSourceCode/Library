@@ -1,6 +1,7 @@
 let myLibrary = [];
 const addBookBtn = document.querySelector(".addBookButton");
 const form = document.querySelector("form");
+const overlay = document.querySelector("#overlay");
 
 addBookBtn.addEventListener("click", popUpForm);
 
@@ -10,10 +11,14 @@ function popUpForm() {
   if (btnActive === true) {
     form.style.transform = "scale(1.2)";
     form.style.visibility = "visible";
+    overlay.classList.add("overlay");
     btnActive = false;
+    overlay.addEventListener("click", popUpForm);
   } else {
     form.style.visibility = "hidden";
     form.style.transform = "scale(0.1)";
+    overlay.classList.remove("overlay");
+    overlay.removeEventListener("click", popUpForm);
     btnActive = true;
   }
 }

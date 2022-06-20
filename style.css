@@ -77,11 +77,16 @@ footer {
 form {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow: 3px 3px 5px 5px black;
+  border-top-right-radius: 50px;
   font-size: 1.3rem;
-  transition: transform 0.6s ease;
-  transform: scale(0.1);
+  background-color: white;
   visibility: hidden;
   z-index: 10;
+  transition: transform 0.6s ease;
+  transform: scale(0.1);
 }
 
 form > input {
@@ -94,11 +99,13 @@ form > div > input {
   margin-bottom: 20px;
 }
 
-body {
+.overlay {
   transition: background-color 0.4s, opacity 0.4s;
-}
-body:hover {
   background-color: black;
-  opacity: 0.05;
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
-/* add div to cover viewport instead of body */
