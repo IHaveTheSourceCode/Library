@@ -116,10 +116,10 @@ form > div > input {
 }
 
 .container {
-  height: 80vh;
+  height: auto;
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 20px;
 }
