@@ -1,9 +1,15 @@
 let myLibrary = [];
-const addBookBtn = document.querySelector(".addBookButton");
+const popUpFormBtn = document.querySelector(".pop-up-form-btn");
 const form = document.querySelector("form");
 const overlay = document.querySelector("#overlay");
+const addBookBtn = document.querySelector("add-book-btn");
 
-addBookBtn.addEventListener("click", popUpForm);
+const title = document.getElementById("title");
+const name = document.getElementById("name");
+const number_of_pages = document.getElementById("number_of_pages");
+const read = document.getElementById("read");
+
+popUpFormBtn.addEventListener("click", popUpForm);
 
 // function that pops up form, after button is clicked
 let btnActive = true;
@@ -23,11 +29,15 @@ function popUpForm() {
   }
 }
 
-// function that closes form, when anything outside of
-// it is clicked
-function closeForm() {}
+//resets inputs values
+function resetInputs() {
+  title.value = "";
+  name.value = "";
+  number_of_pages.value = "";
+  read.checked = false;
+}
 
-function Book(title, author, pages, read) {
+function getBook(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -37,4 +47,8 @@ function Book(title, author, pages, read) {
   };
 }
 
-function addBookToLibrary() {}
+function addBookToLibrary() {
+  //create div
+  //add class
+  //create elements inside of div using inputs values
+}
