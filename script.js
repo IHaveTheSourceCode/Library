@@ -29,7 +29,6 @@ function popUpForm() {
   }
 }
 
-//resets inputs values
 function resetInputs() {
   title.value = "";
   name.value = "";
