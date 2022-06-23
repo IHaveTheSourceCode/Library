@@ -46,10 +46,12 @@ function getBook(title, author, pages, read) {
 }
 
 // creates book elements
-const div = document.createElement("div");
-const book = div.classList.add("book");
-const attDesc = div.classList.add("att-desc");
-const bookDesc = div.classList.add("book-desc");
+const book = document.createElement("div");
+book.classList.add("book");
+const attDesc = document.createElement("div");
+attDesc.classList.add("att-desc");
+const bookDesc = document.createElement("div");
+bookDesc.classList.add("book-desc");
 
 function addBookToLibrary() {
   let book = new getBook(
