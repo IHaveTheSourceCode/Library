@@ -54,30 +54,31 @@ const bookDesc = document.createElement("div");
 bookDesc.classList.add("book-desc");
 
 function addBookToLibrary() {
-  let book = new getBook(
+  let current = new getBook(
     title.value,
     name.value,
     number_of_pages.value,
     read.checked
   );
+
   //assigns elements inside of div with inputs values
   document.container.appendChild(book);
   document.book.appendChild(attDesc);
   attDesc.textContent += "Title: ";
   document.book.appendChild(bookDesc);
-  bookDesc.textContent += book.title;
+  bookDesc.textContent += current.title;
   document.book.appendChild(attDesc);
   attDesc.textContent += "Author: ";
   document.book.appendChild(bookDesc);
-  bookDesc.textContent += book.author;
+  bookDesc.textContent += current.author;
   document.book.appendChild(attDesc);
   attDesc.textContent += "Number of pages: ";
   document.book.appendChild(bookDesc);
-  bookDesc.textContent += book.pages;
+  bookDesc.textContent += current.pages;
   document.book.appendChild(attDesc);
   attDesc.textContent += "Read: ";
   document.book.appendChild(bookDesc);
-  bookDesc.checked += book.read.checked;
+  bookDesc.checked += current.read.checked;
 
   resetInputs();
 }
