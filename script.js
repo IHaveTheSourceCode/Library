@@ -6,7 +6,7 @@ const addBookBtn = document.querySelector(".add-book-btn");
 const container = document.querySelector(".content");
 
 const title = document.getElementById("title");
-const name = document.getElementById("name");
+const author = document.getElementById("author");
 const number_of_pages = document.getElementById("number_of_pages");
 const read = document.getElementById("read");
 
@@ -33,7 +33,7 @@ function popUpForm() {
 
 function resetInputs() {
   title.value = "";
-  name.value = "";
+  author.value = "";
   number_of_pages.value = "";
   read.checked = false;
 }
@@ -46,39 +46,43 @@ function getBook(title, author, pages, read) {
 }
 
 // creates book elements
-const book = document.createElement("div");
-book.classList.add("book");
-const attDesc = document.createElement("div");
-attDesc.classList.add("att-desc");
-const bookDesc = document.createElement("div");
-bookDesc.classList.add("book-desc");
 
 function addBookToLibrary() {
   let current = new getBook(
     title.value,
-    name.value,
+    author.value,
     number_of_pages.value,
     read.checked
   );
 
   //assigns elements inside of div with inputs values
-  document.container.appendChild(book);
-  document.book.appendChild(attDesc);
-  attDesc.textContent += "Title: ";
-  document.book.appendChild(bookDesc);
-  bookDesc.textContent += current.title;
-  document.book.appendChild(attDesc);
-  attDesc.textContent += "Author: ";
-  document.book.appendChild(bookDesc);
-  bookDesc.textContent += current.author;
-  document.book.appendChild(attDesc);
-  attDesc.textContent += "Number of pages: ";
-  document.book.appendChild(bookDesc);
-  bookDesc.textContent += current.pages;
-  document.book.appendChild(attDesc);
-  attDesc.textContent += "Read: ";
-  document.book.appendChild(bookDesc);
-  bookDesc.checked += current.read.checked;
+  let book = document.createElement("div");
+  book.classList.add("book");
+  container.appendChild(book.cloneNode(true));
+
+  let attDesc = document.createElement("div");
+  attDesc.classList.add("att-desc");
+  attDesc.textContent = "Title: ";
+  book.appendChild(attDesc.cloneNode(true));
+  let bookDesc = document.createElement("div");
+  bookDesc.classList.add("book-desc");
+  bookDesc.textContent = current.title;
+  book.appendChild(bookDesc.cloneNode(true));
+
+  attDesc.textContent = "Author: ";
+  book.appendChild(attDesc.cloneNode(true));
+  bookDesc.textContent = current.author;
+  book.appendChild(bookDesc.cloneNode(true));
+
+  attDesc.textContent = "Number of pages: ";
+  book.appendChild(attDesc.cloneNode(true));
+  bookDesc.textContent = current.pages;
+  book.appendChild(bookDesc.cloneNode(true));
+
+  attDesc.textContent = "Read: ";
+  book.appendChild(attDesc.cloneNode(true));
+  bookDesc.checked = current.read.checked;
+  book.appendChild(bookDesc.cloneNode(true));
 
   resetInputs();
 }
