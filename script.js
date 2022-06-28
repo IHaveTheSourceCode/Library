@@ -58,31 +58,33 @@ function addBookToLibrary() {
   //assigns elements inside of div with inputs values
   let book = document.createElement("div");
   book.classList.add("book");
-  container.appendChild(book.cloneNode(true));
+  container.appendChild(book);
 
   let attDesc = document.createElement("div");
   attDesc.classList.add("att-desc");
   attDesc.textContent = "Title: ";
-  book.appendChild(attDesc.cloneNode(true));
+  book.appendChild(attDesc);
   let bookDesc = document.createElement("div");
   bookDesc.classList.add("book-desc");
   bookDesc.textContent = current.title;
-  book.appendChild(bookDesc.cloneNode(true));
+  book.appendChild(bookDesc);
 
+  let attDesc2 = document.createElement("div");
   attDesc.textContent = "Author: ";
-  book.appendChild(attDesc.cloneNode(true));
+  book.appendChild(attDesc);
+  let attDesc = document.createElement("div");
   bookDesc.textContent = current.author;
-  book.appendChild(bookDesc.cloneNode(true));
+  book.appendChild(bookDesc);
 
   attDesc.textContent = "Number of pages: ";
-  book.appendChild(attDesc.cloneNode(true));
+  book.appendChild(attDesc);
   bookDesc.textContent = current.pages;
-  book.appendChild(bookDesc.cloneNode(true));
+  book.appendChild(bookDesc);
 
   attDesc.textContent = "Read: ";
-  book.appendChild(attDesc.cloneNode(true));
+  book.appendChild(attDesc);
   bookDesc.checked = current.read.checked;
-  book.appendChild(bookDesc.cloneNode(true));
+  book.appendChild(bookDesc);
 
   resetInputs();
 }
