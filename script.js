@@ -3,7 +3,7 @@ const popUpFormBtn = document.querySelector(".pop-up-form-btn");
 const form = document.querySelector("form");
 const overlay = document.querySelector("#overlay");
 const addBookBtn = document.querySelector(".add-book-btn");
-const container = document.querySelector(".content");
+const container = document.querySelector(".container");
 
 const title = document.getElementById("title");
 const author = document.getElementById("author");
@@ -46,7 +46,7 @@ function getBook(title, author, pages, read) {
 }
 
 // creates book elements
-
+let i = 0;
 function addBookToLibrary() {
   let current = new getBook(
     title.value,
@@ -55,6 +55,8 @@ function addBookToLibrary() {
     read.checked
   );
 
+  myLibrary[i] = current;
+  i++;
   //assigns elements inside of div with inputs values
   let book = document.createElement("div");
   book.classList.add("book");
@@ -70,21 +72,30 @@ function addBookToLibrary() {
   book.appendChild(bookDesc);
 
   let attDesc2 = document.createElement("div");
-  attDesc.textContent = "Author: ";
-  book.appendChild(attDesc);
-  let attDesc = document.createElement("div");
-  bookDesc.textContent = current.author;
-  book.appendChild(bookDesc);
+  attDesc2.classList.add("att-desc");
+  attDesc2.textContent = "Author: ";
+  book.appendChild(attDesc2);
+  let bookDesc2 = document.createElement("div");
+  bookDesc2.classList.add("book-desc");
+  bookDesc2.textContent = current.author;
+  book.appendChild(bookDesc2);
 
-  attDesc.textContent = "Number of pages: ";
-  book.appendChild(attDesc);
-  bookDesc.textContent = current.pages;
-  book.appendChild(bookDesc);
+  let attDesc3 = document.createElement("div");
+  attDesc3.classList.add("att-desc");
+  attDesc3.textContent = "Number of pages: ";
+  book.appendChild(attDesc3);
+  let bookDesc3 = document.createElement("div");
+  bookDesc3.classList.add("book-desc");
+  bookDesc3.textContent = current.pages;
+  book.appendChild(bookDesc3);
 
-  attDesc.textContent = "Read: ";
-  book.appendChild(attDesc);
-  bookDesc.checked = current.read.checked;
-  book.appendChild(bookDesc);
+  let attDesc4 = document.createElement("div");
+  attDesc4.classList.add("att-desc");
+  attDesc4.textContent = "Read: ";
+  book.appendChild(attDesc4);
+  let bookDesc4 = document.createElement("div");
+  bookDesc4.checked = current.read.checked;
+  book.appendChild(bookDesc4);
 
   resetInputs();
 }
