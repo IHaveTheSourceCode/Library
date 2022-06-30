@@ -45,7 +45,6 @@ function getBook(title, author, pages, read) {
   this.read = read;
 }
 
-// creates book elements
 let i = 0;
 function addBookToLibrary() {
   let current = new getBook(
