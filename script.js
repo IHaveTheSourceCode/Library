@@ -98,4 +98,3 @@ function addBookToLibrary() {
 
   resetInputs();
 }
-// take away
