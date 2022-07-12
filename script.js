@@ -99,3 +99,4 @@ function addBookToLibrary() {
 
   resetInputs();
 }
+// lower the size of addBookToLibrary function
