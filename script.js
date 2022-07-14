@@ -1,5 +1,5 @@
 let myLibrary = [];
-//
+
 const popUpFormBtn = document.querySelector(".pop-up-form-btn");
 const form = document.querySelector("form");
 const overlay = document.querySelector("#overlay");
@@ -93,7 +93,9 @@ function addBookToLibrary() {
   attDesc4.classList.add("att-desc");
   attDesc4.textContent = "Read: ";
   book.appendChild(attDesc4);
-  let bookDesc4 = document.createElement("div");
+  let bookDesc4 = document.createElement("input");
+  bookDesc4.type = "checkbox";
+  bookDesc4.classList.add("book-checkbox");
   bookDesc4.checked = current.read.checked;
   book.appendChild(bookDesc4);
 
