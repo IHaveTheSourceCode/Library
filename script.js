@@ -96,7 +96,9 @@ function addBookToLibrary() {
   let bookDesc4 = document.createElement("input");
   bookDesc4.type = "checkbox";
   bookDesc4.classList.add("book-checkbox");
-  bookDesc4.checked = current.read.checked;
+  if (read.checked === true) {
+    bookDesc4.checked = true;
+  }
   book.appendChild(bookDesc4);
 
   resetInputs();
