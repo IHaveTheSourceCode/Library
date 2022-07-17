@@ -60,6 +60,7 @@ function addBookToLibrary() {
   //assigns elements inside of div with inputs values
   let book = document.createElement("div");
   book.classList.add("book");
+  book.dataset.position = i;
   container.appendChild(book);
 
   let attDesc = document.createElement("div");
