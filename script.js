@@ -102,6 +102,27 @@ function addBookToLibrary() {
   }
   book.appendChild(bookDesc4);
 
+  // add x, aka the delete book button
+
+  // add event listener to book element that runs on mouse enter
+  //that will add overlay and delete it on mouseleave
+  book.addEventListener("mouseenter", function () {
+    let bookOverlay = document.createElement("div");
+    bookOverlay.classList.add("book-overlay");
+    book.append(bookOverlay);
+    let deleteButton = document.createElement("div");
+    deleteButton.classList.add("delete-button");
+    deleteButton.textContent = "Delete";
+    bookOverlay.append(deleteButton);
+  });
+
+  book.addEventListener("mouseleave", function () {
+    bookOverlay.remove();
+    deleteButton.remove();
+  });
+
+  // add Delete button to that overlay, that will run function
+  //deleteBook() which will delete clicked book object
   resetInputs();
 }
 // lower the size of addBookToLibrary function
