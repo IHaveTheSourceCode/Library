@@ -56,12 +56,14 @@ function addBookToLibrary() {
   );
 
   myLibrary[i] = current;
-  i++;
+
   //assigns elements inside of div with inputs values
   let book = document.createElement("div");
+  book.dataset.position = i;
   book.classList.add("book");
   book.dataset.position = i;
   container.appendChild(book);
+  i++;
 
   let attDesc = document.createElement("div");
   attDesc.classList.add("att-desc");
@@ -114,15 +116,20 @@ function addBookToLibrary() {
     deleteButton.classList.add("delete-button");
     deleteButton.textContent = "Delete";
     bookOverlay.append(deleteButton);
+    deleteButton.addEventListener("click", function () {
+      book.replaceChildren();
+      book.remove();
+    });
   });
 
   book.addEventListener("mouseleave", function () {
     bookOverlay.remove();
     deleteButton.remove();
   });
-
   // add Delete button to that overlay, that will run function
   //deleteBook() which will delete clicked book object
   resetInputs();
 }
 // lower the size of addBookToLibrary function
+
+let test = querySelector();
