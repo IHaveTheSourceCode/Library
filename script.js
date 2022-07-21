@@ -14,7 +14,6 @@ const read = document.getElementById("read");
 popUpFormBtn.addEventListener("click", popUpForm);
 addBookBtn.addEventListener("click", addBookToLibrary);
 
-// function that pops up form, after button is clicked
 let btnActive = true;
 function popUpForm() {
   if (btnActive === true) {
@@ -104,13 +103,9 @@ function addBookToLibrary() {
   }
   book.appendChild(bookDesc4);
 
-  // add x, aka the delete book button
-
-  // add event listener to book element that runs on mouse enter
-  //that will add overlay and delete it on mouseleave
   book.addEventListener("mouseenter", function () {
     let bookOverlay = document.createElement("div");
-    bookOverlay.dataset.overlayPosition = dataSelector;
+    bookOverlay.dataset.overlay = dataSelector;
     bookOverlay.classList.add("book-overlay");
     book.append(bookOverlay);
     let deleteButton = document.createElement("div");
@@ -122,12 +117,14 @@ function addBookToLibrary() {
       book.remove();
     });
     book.addEventListener("mouseleave", function () {
-      document
-        .querySelector(`[data-overlayPosition = ${dataSelector}`)
-        .remove();
+      document.querySelector(`[data-overlay = ${dataSelector}`).remove();
     });
   });
-
   resetInputs();
+  form.style.visibility = "hidden";
+  form.style.transform = "scale(0.1)";
+  overlay.classList.remove("overlay");
+  overlay.removeEventListener("click", popUpForm);
+  btnActive = true;
 }
 // lower the size of addBookToLibrary function
