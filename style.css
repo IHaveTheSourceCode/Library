@@ -10,7 +10,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 1q0vh;
   display: flex;
   flex-direction: column;
 }
@@ -185,4 +185,11 @@ form > div > input {
 
 .delete-button:hover {
   background-color: red;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    display: flex;
+    align-items: center;
+  }
 }
